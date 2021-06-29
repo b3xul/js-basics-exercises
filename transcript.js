@@ -2,7 +2,7 @@
 
 const dayjs = require('dayjs');
 
-function Exam(code, name, credits, date, score, laude=false) {
+function Exam(code, name, credits, date, score, laude = false) {
   this.code = code;
   this.name = name;
   this.credits = credits;
@@ -22,7 +22,7 @@ function ExamList() {
 
   this.find = (code) => {
     for (const c of this.list)
-      if(c.code === code)
+      if (c.code === code)
         return c;
     return undefined;
   };
@@ -32,11 +32,11 @@ function ExamList() {
   };
 
   this.listByDate = () => {
-    return [...this.list].sort((a,b) => (a.date.isAfter(b.date) ? 1 : -1));
+    return [...this.list].sort((a, b) => (a.date.isAfter(b.date) ? 1 : -1));
   };
 
   this.listByScore = () => {
-    return [...this.list].sort((a,b) => (b.score - a.score));
+    return [...this.list].sort((a, b) => (b.score - a.score));
   };
 
   this.average = () => {
